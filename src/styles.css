@@ -160,5 +160,57 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
+
+@utility text-gradient-wine {
+  background: var(--gradient-rose);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-wine {
+  background-image: var(--gradient-wine);
+}
+
+@utility bg-gradient-rose {
+  background-image: var(--gradient-rose);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
