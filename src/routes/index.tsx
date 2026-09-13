@@ -112,8 +112,6 @@ function Header() {
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           className="rounded-full p-2 text-primary-foreground lg:hidden"
         >
-          {open ? <Menu className="h-6 w-6" /> : <X className="hidden h-6 w-6" />}
-          {open ? null : <Menu className="hidden h-6 w-6" />}
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
