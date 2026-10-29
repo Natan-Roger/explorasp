@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PlacePage } from "@/components/explora/PlacePage";
 import { findPlace } from "@/components/explora/place-details";
@@ -26,9 +26,10 @@ export const Route = createFileRoute("/lugares/$slug")({
     };
   },
   component: LugarRoute,
-  errorComponent: ({ reset }) => (
-    <main className="mx-auto max-w-7xl px-5 py-20"><h1 className="text-3xl">Não foi possível carregar este lugar</h1><Button onClick={reset} className="mt-6">Tentar novamente</Button><Button asChild variant="outline" className="mt-6 ml-3"><Link to="/" hash="lugares">Voltar aos lugares</Link></Button></main>
-  ),
+  errorComponent: ({ reset }) => {
+    const router = useRouter();
+    return <main className="mx-auto max-w-7xl px-5 py-20"><h1 className="text-3xl">Não foi possível carregar este lugar</h1><Button onClick={() => { void router.invalidate(); reset(); }} className="mt-6">Tentar novamente</Button><Button asChild variant="outline" className="mt-6 ml-3"><Link to="/" hash="lugares">Voltar aos lugares</Link></Button></main>;
+  },
   notFoundComponent: () => (
     <main className="mx-auto max-w-7xl px-5 py-20"><h1 className="text-3xl">Lugar não encontrado</h1><Button asChild className="mt-6"><Link to="/" hash="lugares">Voltar aos lugares</Link></Button></main>
   ),

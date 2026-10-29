@@ -1,6 +1,6 @@
 # Páginas dos lugares
 
-- [ ] Criar conteúdo específico e páginas reutilizáveis para os oito lugares cadastrados.
-- [ ] Criar páginas para os seis eventos cadastrados, usando apenas informações existentes e indicando detalhes não informados.
-- [ ] Conectar “Ver mais” sem mudar os cards e oferecer retorno à seção de lugares.
-- [ ] Verificar navegação, conteúdo, telas menores e funcionalidades existentes.
+- [x] Criar conteúdo específico e páginas reutilizáveis para os oito lugares cadastrados.
+- [x] Criar páginas para os seis eventos cadastrados, usando apenas informações existentes e indicando detalhes não informados.
+- [x] Conectar “Ver mais” preservando os cards e oferecer retorno às seções de lugares e eventos.
+- [x] Verificar os 14 links, retorno, fotografias, filtros, páginas ausentes e telas menores; quatro testes do catálogo aprovados.
