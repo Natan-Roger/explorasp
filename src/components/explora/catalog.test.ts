@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, test } from "bun:test";
 import { eventos, lugares } from "./data";
 import { eventDetails, findEvent } from "./event-details";
