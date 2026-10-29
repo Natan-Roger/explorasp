@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "motion/react";
 import {
@@ -26,6 +26,9 @@ import heroImg from "@/assets/hero-sp.jpg";
 import { categorias, eventos, lugares } from "@/components/explora/data";
 import { Reveal } from "@/components/explora/Reveal";
 import { CountUp } from "@/components/explora/CountUp";
+import { getPlaceSlug } from "@/components/explora/place-routing";
+import { getEventSlug } from "@/components/explora/event-details";
+import { Button } from "@/components/ui/button";
 
 const INSTAGRAM = "https://www.instagram.com/explorassp";
 
@@ -407,6 +410,11 @@ function Eventos() {
                   <MapPin className="h-4 w-4" aria-hidden="true" />
                   {ev.local}
                 </p>
+                <Button asChild variant="link" className="h-auto justify-start px-0 py-1 font-heading font-semibold text-accent">
+                  <Link to="/eventos/$slug" params={{ slug: getEventSlug(ev.nome) }}>
+                    Ver mais<ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
               </div>
             </motion.article>
           ))}
@@ -443,15 +451,14 @@ function Lugares() {
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <h3 className="text-xl text-primary-foreground">{lugar.nome}</h3>
                   <p className="mt-1 text-sm text-primary-foreground/80">{lugar.descricao}</p>
-                  <a
-                    href={INSTAGRAM}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                  <Link
+                    to="/lugares/$slug"
+                    params={{ slug: getPlaceSlug(lugar.nome) }}
                     className="mt-3 inline-flex items-center gap-1.5 font-heading text-sm font-semibold text-primary-foreground transition-all hover:gap-3"
                   >
                     Ver mais
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
               </article>
             </Reveal>

@@ -10,5 +10,6 @@
 <!-- LOVABLE:END -->
 
 ## Tourist place pages
-- Use a single `/lugares/$slug` route with a separate typed content registry and explicit stable slugs; this avoids duplicated pages while keeping the existing card data unchanged.
+- Use `/lugares/$slug` and `/eventos/$slug` routes with separate typed content registries and explicit stable slugs; this avoids duplicated pages while keeping the existing card data unchanged.
+- Event detail pages derive identity, category, location and admission type from the existing event records; do not infer dates, editions, programs or ticket prices from the venue information.
 - Local static place data is isomorphic and requires no backend; validate unknown slugs with `notFound()` and keep visitor information linked to its official sources.
